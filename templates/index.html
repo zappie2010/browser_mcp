@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 스크래핑 대시보드 - Browser Controls 실습</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🌐 웹 스크래핑 대시보드</h1>
+            <p>Cursor Browser Controls 실습을 위한 간단한 웹 스크래핑 도구</p>
+        </header>
+
+        <main class="main-content">
+            <section class="input-section">
+                <form id="scrapeForm" class="scrape-form">
+                    <div class="form-group">
+                        <label for="urlInput">스크래핑할 URL을 입력하세요:</label>
+                        <div class="input-container">
+                            <input 
+                                type="url" 
+                                id="urlInput" 
+                                name="url" 
+                                placeholder="https://example.com 또는 example.com"
+                                required
+                            >
+                            <button type="submit" id="scrapeBtn" class="scrape-btn">
+                                <span class="btn-text">스크래핑 시작</span>
+                                <span class="btn-loading" style="display: none;">스크래핑 중...</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <h2>스크래핑 결과</h2>
+                <div id="resultsContent"></div>
+            </section>
+
+            <section class="error-section" id="errorSection" style="display: none;">
+                <div class="error-message">
+                    <h3>❌ 오류 발생</h3>
+                    <p id="errorText"></p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>💡 <strong>Browser Controls 실습 팁:</strong></p>
+            <ul>
+                <li>요소를 우클릭하여 검사해보세요</li>
+                <li>CSS 속성을 실시간으로 수정해보세요</li>
+                <li>다양한 URL로 테스트해보세요</li>
+            </ul>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
